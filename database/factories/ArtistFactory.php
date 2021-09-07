@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Cart;
+use App\Models\Artist;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CartFactory extends Factory
+class ArtistFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Cart::class;
+    protected $model = Artist::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,8 @@ class CartFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'label_id'   => $this->faker->numberBetween(1,5),
         ];
     }
 }
