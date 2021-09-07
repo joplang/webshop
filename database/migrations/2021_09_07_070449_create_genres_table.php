@@ -18,6 +18,8 @@ class CreateGenresTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->text('description');
+            $table->userstamps();
+            $table->softUserstamps();
         });
     }
 
