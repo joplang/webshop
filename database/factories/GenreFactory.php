@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\genre;
+use App\Models\Genre;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GenreFactory extends Factory
@@ -12,7 +12,7 @@ class GenreFactory extends Factory
      *
      * @var string
      */
-    protected $model = genre::class;
+    protected $model = Genre::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,8 @@ class GenreFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->emoji(),
+            'description' => $this->faker->company(),
         ];
     }
 }

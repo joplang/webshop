@@ -11,5 +11,5 @@ class Label extends Model
 {
     use HasFactory, HasUserStamps;
 
-    protected $table = 'label';
+    protected $table = 'labels';
 }

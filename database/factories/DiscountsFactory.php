@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\discounts;
+use App\Models\Discounts;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class DiscountsFactory extends Factory
@@ -12,7 +12,7 @@ class DiscountsFactory extends Factory
      *
      * @var string
      */
-    protected $model = discounts::class;
+    protected $model = Discounts::class;
 
     /**
      * Define the model's default state.

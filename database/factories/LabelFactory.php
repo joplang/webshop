@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\label;
+use App\Models\Label;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class LabelFactory extends Factory
@@ -12,7 +12,7 @@ class LabelFactory extends Factory
      *
      * @var string
      */
-    protected $model = label::class;
+    protected $model = Label::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,8 @@ class LabelFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->emoji(),
+            'description' => $this->faker->company(),
         ];
     }
 }

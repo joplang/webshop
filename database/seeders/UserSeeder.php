@@ -27,7 +27,9 @@ class UserSeeder extends Seeder
         'remember_token' => Str::random(10),
         'created_by' => null,
         'updated_by' => null,
-    ],[
+       ]);
+
+    User::create([
         'name' => 'Joppe Langejan',
         'email' => 'joppe@mail.nl',
         'email_verified_at' => now(),
