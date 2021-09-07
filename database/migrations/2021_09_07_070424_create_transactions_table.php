@@ -19,7 +19,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('cart_id');
             $table->foreign('cart_id')->references('id')->on('cart');
             $table->timestamp('timestamp');
-            $table->binary('status');
+            $table->boolean('status');
         });
     }
 
