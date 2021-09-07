@@ -3,6 +3,11 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use App\Models\User;
+
 
 class UserSeeder extends Seeder
 {
@@ -13,6 +18,25 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
+       User::create([
+        'name' => 'Bas Leeuwerik',
+        'email' => 'bas@mail.nl',
+        'email_verified_at' => now(),
+        'password' => 'password',
+        'remember_token' => Str::random(10),
+        'created_by' => null,
+        'updated_by' => null,
+    ],[
+        'name' => 'Joppe Langejan',
+        'email' => 'joppe@mail.nl',
+        'email_verified_at' => now(),
+        'password' => 'password',
+        'remember_token' => Str::random(10),
+        'created_by' => null,
+        'updated_by' => null,
+
+    ]);
+    User::factory(6)->create();
     }
 }
