@@ -23,6 +23,8 @@ class CreateDiscountsTable extends Migration
             $table->decimal('percentage');
             $table->date('start_date');
             $table->date('end_date');
+            $table->userstamps();
+            $table->softUserstamps();
         });
     }
 

@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->text('track_list');
             $table->string('img');
-            $table->float('price');
+            $table->decimal('price');
             $table->userstamps();
             $table->softUserstamps();
         });

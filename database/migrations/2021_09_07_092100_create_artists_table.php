@@ -19,6 +19,8 @@ class CreateArtistsTable extends Migration
             $table->unsignedBigInteger('label_id');
             $table->foreign('label_id')->references('id')->on('labels');
             $table->string('name');
+            $table->userstamps();
+            $table->softUserstamps();
         });
     }
 

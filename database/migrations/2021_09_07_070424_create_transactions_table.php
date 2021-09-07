@@ -19,6 +19,8 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('cart_id');
             $table->foreign('cart_id')->references('id')->on('carts');
             $table->boolean('status');
+            $table->userstamps();
+            $table->softUserstamps();
         });
     }
 
