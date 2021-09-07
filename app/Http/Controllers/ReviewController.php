@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\transactions;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
-class TransactionsController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TransactionsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\transactions  $transactions
+     * @param  \App\Models\reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function show(transactions $transactions)
+    public function show(Review $reviews)
     {
         //
     }
@@ -52,10 +52,10 @@ class TransactionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\transactions  $transactions
+     * @param  \App\Models\reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function edit(transactions $transactions)
+    public function edit(Review $reviews)
     {
         //
     }
@@ -64,10 +64,10 @@ class TransactionsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\transactions  $transactions
+     * @param  \App\Models\reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, transactions $transactions)
+    public function update(Request $request, Review $reviews)
     {
         //
     }
@@ -75,10 +75,10 @@ class TransactionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\transactions  $transactions
+     * @param  \App\Models\reviews  $reviews
      * @return \Illuminate\Http\Response
      */
-    public function destroy(transactions $transactions)
+    public function destroy(Review $reviews)
     {
         //
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\artists;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class ArtistsController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ArtistsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\artists  $artists
+     * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function show(artists $artists)
+    public function show(Customer $customers)
     {
         //
     }
@@ -52,10 +52,10 @@ class ArtistsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\artists  $artists
+     * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function edit(artists $artists)
+    public function edit(Customer $customers)
     {
         //
     }
@@ -64,10 +64,10 @@ class ArtistsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\artists  $artists
+     * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, artists $artists)
+    public function update(Request $request, Customer $customers)
     {
         //
     }
@@ -75,10 +75,10 @@ class ArtistsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\artists  $artists
+     * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(artists $artists)
+    public function destroy(Customer $customers)
     {
         //
     }

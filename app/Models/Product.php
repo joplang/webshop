@@ -12,4 +12,22 @@ class Product extends Model
     use HasFactory, HasUserStamps;
 
     protected $table = 'products';
+
+
+
+
+
+
+    public function scopePriceGreaterThan($query, $price){
+        return $query->where('price', '>=', $price);
+    }
+
+    public function scopePriceLesserThan($query, $price){
+        return $query->where('price', '<=', $price);
+    }
+
+   // public function scopeInStock($query){
+   //    return $query->where('stock', '=', '1');
+   //}
+
 }
