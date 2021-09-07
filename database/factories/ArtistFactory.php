@@ -22,8 +22,8 @@ class ArtistFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'label_id'   => $this->faker->numberBetween(1,5),
+            'name'      => $this->faker->name(),
+            'label_id'  => 1,
         ];
     }
 }
