@@ -22,7 +22,10 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => 1,
+            'product_id'=> 1,
+            'score'  => 3,
+            'description' => $this->faker->sentence(),
         ];
     }
 }
