@@ -22,7 +22,6 @@ class CreateCartsTable extends Migration
             $table->foreign('product_id')->references('id')->on('users');
             $table->mediumInteger('quantity');
             $table->decimal('price');
-            $table->timestamp('timestamp');
         });
     }
 
