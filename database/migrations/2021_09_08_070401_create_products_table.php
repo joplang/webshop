@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->foreign('genre_id')->references('id')->on('genres');
             $table->string('title');
             $table->year('year');
+            $table->smallInteger('stock')->default(100);
             $table->text('description');
             $table->text('track_list');
             $table->string('img');
