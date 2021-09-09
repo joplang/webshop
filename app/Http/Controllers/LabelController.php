@@ -14,7 +14,7 @@ class LabelController extends Controller
      */
     public function index()
     {
-        //
+        return view('labels/main');
     }
 
     /**
