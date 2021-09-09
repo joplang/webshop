@@ -27,6 +27,7 @@ class UserSeeder extends Seeder
         'remember_token' => Str::random(10),
         'created_by' => null,
         'updated_by' => null,
+        'role'       => 1,
        ]);
 
     User::create([
@@ -37,6 +38,7 @@ class UserSeeder extends Seeder
         'remember_token' => Str::random(10),
         'created_by' => null,
         'updated_by' => null,
+        'role'       => 1,
 
     ]);
     User::factory(6)->create();

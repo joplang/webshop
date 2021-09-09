@@ -25,5 +25,13 @@ class DatabaseSeeder extends Seeder
         $this->call(CustomersSeeder::class);
         $this->call(ProductsSeeder::class);
         $this->call(ReviewsSeeder::class);
+        DB::table('roles')->insert([
+            'name' => 'admin',
+        ]);
+        DB::table('roles')->insert([
+            'name' => 'customer',
+        ]);
+
+
     }    
 }
