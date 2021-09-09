@@ -30,6 +30,7 @@ Route::resource('cart', \App\Http\Controllers\CartController::class);
 
 Route::resource('artists', \App\Http\Controllers\ArtistController::class);
 
+Route::resource('discounts', \App\Http\Controllers\DiscountsController::class);
 
 Auth::routes();
 

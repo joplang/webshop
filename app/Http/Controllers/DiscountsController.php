@@ -14,7 +14,7 @@ class DiscountsController extends Controller
      */
     public function index()
     {
-        //
+        return view('discounts/main');
     }
 
     /**
