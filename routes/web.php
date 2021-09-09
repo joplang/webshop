@@ -34,3 +34,5 @@ Route::resource('artists', \App\Http\Controllers\ArtistController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/product', [\App\Http\Controllers\ProductController::class, 'index'])->name('product');
