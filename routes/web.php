@@ -29,3 +29,7 @@ Route::resource('cart', \App\Http\Controllers\CartController::class);
 
 Route::resource('artists', \App\Http\Controllers\ArtistController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
