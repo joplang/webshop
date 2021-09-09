@@ -22,7 +22,15 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'artist_id' => 1,
+            'label_id'  => 1,
+            'genre_id'  => 1,
+            'title'         => $this->faker->name(),
+            'year'          => $this->faker->year(),
+            'description'   => $this->faker->text(),
+            'track_list'    => $this->faker->text(),
+            'img'           => $this->faker->sentence(),
+            'price'         => 50.50,
         ];
     }
 }

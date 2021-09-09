@@ -16,3 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('customers', \App\Http\Controllers\CustomerController::class);
+
+Route::resource('products', \App\Http\Controllers\ProductController::class);
+
+Route::resource('genres', \App\Http\Controllers\GenreController::class);
+
+Route::resource('labels', \App\Http\Controllers\LabelController::class);
+
+Route::resource('cart', \App\Http\Controllers\CartController::class);
+
+Route::resource('artists', \App\Http\Controllers\ArtistController::class);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         $this->call(GenreSeeder::class);
         $this->call(LabelSeeder::class);
+        $this->call(ArtistsSeeder::class);
+        $this->call(CustomersSeeder::class);
+        $this->call(ProductsSeeder::class);
+        $this->call(ReviewsSeeder::class);
     }    
 }

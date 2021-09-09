@@ -11,5 +11,5 @@ class Cart extends Model
 {
     use HasFactory, HasUserStamps;
 
-    protected $table = 'cart';
+    protected $table = 'carts';
 }

@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Cart;
+use App\Models\Review;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CartFactory extends Factory
+class ReviewFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Cart::class;
+    protected $model = Review::class;
 
     /**
      * Define the model's default state.
@@ -22,7 +22,10 @@ class CartFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => 1,
+            'product_id'=> 1,
+            'score'  => 3,
+            'description' => $this->faker->sentence(),
         ];
     }
 }
