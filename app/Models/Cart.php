@@ -12,4 +12,6 @@ class Cart extends Model
     use HasFactory, HasUserStamps;
 
     protected $table = 'carts';
+
+    
 }
