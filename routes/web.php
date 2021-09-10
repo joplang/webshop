@@ -33,6 +33,3 @@ Route::resource('artists', \App\Http\Controllers\ArtistController::class);
 Route::resource('discounts', \App\Http\Controllers\DiscountsController::class);
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
