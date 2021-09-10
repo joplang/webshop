@@ -10,4 +10,13 @@
         </div>
     </div>
 </div>
+<div class="container"> 
+@foreach ( $artists as $artist)
+  <div class="card">
+  <?= $artist->name ?>
+<a href="/artists/<?= $artist->id ?>"> Klik! </a>
+  </div>
+    
+@endforeach
+</div>
 @endsection
