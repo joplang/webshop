@@ -46,7 +46,10 @@
           <a class="nav-link" href="discounts">Aanbiedingen!</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cart">Winkelmand</a>
+          <a class="btn btn-success" href="cart">
+            <i class="fa fa-shopping-cart"></i>Winkelmand
+              <span class="badge badge-light">3</span>
+          </a>
         </li>
               <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
