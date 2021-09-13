@@ -18,29 +18,29 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        
-       User::create([
-        'name' => 'Bas Leeuwerik',
-        'email' => 'bas@mail.nl',
-        'email_verified_at' => now(),
-        'password' => 'password',
-        'remember_token' => Str::random(10),
-        'created_by' => null,
-        'updated_by' => null,
-        'role'       => 1,
-       ]);
 
-    User::create([
-        'name' => 'Joppe Langejan',
-        'email' => 'joppe@mail.nl',
-        'email_verified_at' => now(),
-        'password' => 'password',
-        'remember_token' => Str::random(10),
-        'created_by' => null,
-        'updated_by' => null,
-        'role'       => 1,
+        User::create([
+            'name' => 'Bas Leeuwerik',
+            'email' => 'bas@mail.nl',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+            'remember_token' => Str::random(10),
+            'created_by' => null,
+            'updated_by' => null,
+            'role'       => 1,
+        ]);
 
-    ]);
-    User::factory(6)->create();
+        User::create([
+            'name' => 'Joppe Langejan',
+            'email' => 'joppe@mail.nl',
+            'email_verified_at' => now(),
+            'password' =>  bcrypt('password'),
+            'remember_token' => Str::random(10),
+            'created_by' => null,
+            'updated_by' => null,
+            'role'       => 1,
+
+        ]);
+        User::factory(6)->create();
     }
 }
