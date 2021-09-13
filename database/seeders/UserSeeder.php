@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
     public function run()
     {
 
+
         User::create([
             'name' => 'Bas Leeuwerik',
             'email' => 'bas@mail.nl',
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
             'updated_by' => null,
             'role'       => 1,
         ]);
+
 
         User::create([
             'name' => 'Joppe Langejan',

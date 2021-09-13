@@ -18,11 +18,13 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         $products = Product::all();
 
         return view('products/main', [
             'products' => $products,
         ]);
+
     }
 
     /**
@@ -54,6 +56,7 @@ class ProductController extends Controller
      */
     public function show(Product $products)
     {
+
         $id = request()->route('product');
 
 
@@ -62,6 +65,7 @@ class ProductController extends Controller
         return view('products/show', [
             'product' => $product,
         ]);
+
     }
 
     /**

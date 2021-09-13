@@ -31,22 +31,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="products">Albums</a>
+          <a class="nav-link active" aria-current="page" href="/products">Albums</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="artists">Artiesten</a>
+          <a class="nav-link" href="/artists">Artiesten</a>
         </li>
                 <li class="nav-item">
-          <a class="nav-link" href="labels">Labels</a>
+          <a class="nav-link" href="/labels">Labels</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="genres">Genres</a>
+          <a class="nav-link" href="/genres">Genres</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="discounts">Aanbiedingen!</a>
+          <a class="nav-link" href="/discounts">Aanbiedingen!</a>
         </li>
         <li class="nav-item">
-          <a class="btn btn-success" href="cart">
+          <a class="btn btn-success" href="/cart">
             <i class="fa fa-shopping-cart"></i>Winkelmand
               <span class="badge badge-light">3</span>
           </a>
