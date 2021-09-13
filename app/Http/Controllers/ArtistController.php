@@ -15,11 +15,11 @@ class ArtistController extends Controller
     public function index()
     {
 
-       $artists = Artist::all();
-       
-       return view('artists/main', [
-           'artists' => $artists
-       ]);
+        $artists = Artist::all();
+
+        return view('artists/main', [
+            'artists' => $artists
+        ]);
     }
 
     /**
@@ -51,7 +51,15 @@ class ArtistController extends Controller
      */
     public function show(Artist $artists)
     {
-        //
+        $id = request()->route('artist');
+
+        $artist = Artist::get()->where('id', $id);
+
+        // dd($artist);
+
+        return view('artists/show', [
+            'artist' => $artist,
+        ]);
     }
 
     /**

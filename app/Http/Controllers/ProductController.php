@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Faker\Extension\Helper;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+use Symfony\Component\Console\Helper\Helper as HelperHelper;
+use Symfony\Component\HttpFoundation\UrlHelper;
 
 class ProductController extends Controller
 {
@@ -14,7 +18,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-            return view('products/main');
+
+        $products = Product::all();
+
+        return view('products/main', [
+            'products' => $products,
+        ]);
+
     }
 
     /**
@@ -46,7 +56,16 @@ class ProductController extends Controller
      */
     public function show(Product $products)
     {
-        return view('products/show');
+
+        $id = request()->route('product');
+
+
+        $product = Product::get()->where('id', $id);
+
+        return view('products/show', [
+            'product' => $product,
+        ]);
+
     }
 
     /**

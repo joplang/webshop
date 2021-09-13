@@ -18,16 +18,25 @@ class Product extends Model
 
 
 
-    public function scopePriceGreaterThan($query, $price){
+
+    public static function showProduct($query, $id)
+    {
+
+        return $query->where('id', '=', $id);
+    }
+
+    public function scopePriceGreaterThan($query, $price)
+    {
         return $query->where('price', '>=', $price);
     }
 
-    public function scopePriceLesserThan($query, $price){
+    public function scopePriceLesserThan($query, $price)
+    {
         return $query->where('price', '<=', $price);
     }
 
-   // public function scopeInStock($query){
-   //    return $query->where('stock', '=', '1');
-   //}
+    // public function scopeInStock($query){
+    //    return $query->where('stock', '=', '1');
+    //}
 
 }
