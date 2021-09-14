@@ -21,14 +21,5 @@ class CustomerFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'first_name' => $this->faker->firstName(),
-            'last_name'  => $this->faker->lastName(),
-            'adress'     => $this->faker->address(),
-            'zipcode'    => $this->faker->sentence(),
-            'phone'      => $this->faker->phoneNumber(),
-            'user_id'    => 4,
-
-        ];
     }
 }

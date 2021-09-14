@@ -25,12 +25,12 @@ class ProductFactory extends Factory
             'artist_id' => 1,
             'label_id'  => 1,
             'genre_id'  => 1,
-            'title'         => $this->faker->name(),
+            'album_title'         => $this->faker->name(),
             'year'          => $this->faker->year(),
             'description'   => $this->faker->text(),
             'track_list'    => $this->faker->text(),
-            'img'           => $this->faker->sentence(),
             'price'         => 50.50,
+            'VAT'           => 50.50,
         ];
     }
 }

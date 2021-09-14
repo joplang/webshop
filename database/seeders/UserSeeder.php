@@ -21,26 +21,28 @@ class UserSeeder extends Seeder
 
 
         User::create([
-            'name' => 'Bas Leeuwerik',
+            'first_name' => 'Bas',
+            'last_name' => 'Leeuwerik',
             'email' => 'bas@mail.nl',
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
             'remember_token' => Str::random(10),
             'created_by' => null,
             'updated_by' => null,
-            'role'       => 1,
+            'role_id'       => 1,
         ]);
 
 
         User::create([
-            'name' => 'Joppe Langejan',
+            'first_name' => 'Joppe',
+            'last_name' => 'Langejan',
             'email' => 'joppe@mail.nl',
             'email_verified_at' => now(),
             'password' =>  bcrypt('password'),
             'remember_token' => Str::random(10),
             'created_by' => null,
             'updated_by' => null,
-            'role'       => 1,
+            'role_id'       => 1,
 
         ]);
         User::factory(6)->create();
