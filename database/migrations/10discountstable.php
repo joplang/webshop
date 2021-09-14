@@ -21,6 +21,8 @@ class CreateDiscountsTable extends Migration
             $table->string('label_id');
             $table->string('artist_id');
             $table->decimal('percentage');
+            $table->string('title');
+            $table->string('description');
             $table->date('start_date');
             $table->date('end_date');
             $table->userstamps();

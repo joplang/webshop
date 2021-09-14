@@ -22,13 +22,12 @@ class CreateProductsTable extends Migration
             $table->foreign('label_id')->references('id')->on('labels');
             $table->unsignedBigInteger('genre_id');
             $table->foreign('genre_id')->references('id')->on('genres');
-            $table->string('title');
+            $table->string('album_title');
             $table->year('year');
-            $table->smallInteger('stock')->default(100);
             $table->text('description');
             $table->text('track_list');
-            $table->string('img');
             $table->decimal('price');
+            $table->decimal('VAT');
             $table->userstamps();
             $table->softUserstamps();
         });
