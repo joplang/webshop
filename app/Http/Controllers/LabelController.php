@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\label;
+use App\Models\Label;
 use Illuminate\Http\Request;
 
 class LabelController extends Controller
@@ -14,7 +14,11 @@ class LabelController extends Controller
      */
     public function index()
     {
-        return view('labels/main');
+        $labels = Label::all();
+
+        return view('labels/main', [
+            'labels' => $labels,
+        ]);
     }
 
     /**

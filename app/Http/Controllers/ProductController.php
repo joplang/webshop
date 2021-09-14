@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Symfony\Component\Console\Helper\Helper as HelperHelper;
 use Symfony\Component\HttpFoundation\UrlHelper;
+use App\Models\Artist;
 
 class ProductController extends Controller
 {
@@ -24,7 +25,6 @@ class ProductController extends Controller
         return view('products/main', [
             'products' => $products,
         ]);
-
     }
 
     /**
@@ -60,12 +60,16 @@ class ProductController extends Controller
         $id = request()->route('product');
 
 
-        $product = Product::get()->where('id', $id);
+        $product = Product::get()->where('id', $id)->first();
+
+        $artist = Artist::get()->where('id', $product->artist_id)->first();
+
+
 
         return view('products/show', [
             'product' => $product,
+            'artist'  => $artist,
         ]);
-
     }
 
     /**
