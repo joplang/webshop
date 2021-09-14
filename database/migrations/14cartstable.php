@@ -17,9 +17,9 @@ class CreateCartsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('cart');
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('cart');
             $table->decimal('price');
             $table->decimal('VAT');
             $table->userstamps();
