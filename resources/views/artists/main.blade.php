@@ -5,7 +5,7 @@
      @foreach ($artists as $artist)
          <div class="card">
              <a href="/artists/{{ $artist->id }}">
-                 <div class="card-title"> {{ $artist->name }} </div>
+                 <div class="card-header"> {{ $artist->name }} </div>
              </a>
          </div>
      @endforeach

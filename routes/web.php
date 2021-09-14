@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/home', function () {
+    return view('welcome');
+});
+
+
 Route::resource('customers', \App\Http\Controllers\CustomerController::class);
 
 Route::resource('products', \App\Http\Controllers\ProductController::class);
