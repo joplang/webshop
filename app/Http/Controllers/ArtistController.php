@@ -57,11 +57,14 @@ class ArtistController extends Controller
 
         $artist = Artist::get()->where('id', $id)->first();
 
-        //$artist_id = $artist->get('id');
-        dd($artist);
+        $products = Product::get()->where('artist_id', $artist->id);
+
+        $label = Label::get()->where('id', $artist->label_id)->first();
 
         return view('artists/show', [
-            'artist' => $artist,
+            'artist'    => $artist,
+            'products'  => $products,
+            'label'     => $label,
         ]);
     }
 

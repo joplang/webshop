@@ -22,13 +22,16 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'artist_id' => 1,
+            'artist_id' => $this->faker->numberBetween(1, 5),
             'label_id'  => 1,
             'genre_id'  => 1,
             'album_title'         => $this->faker->name(),
             'year'          => $this->faker->year(),
-            'description'   => $this->faker->text(),
-            'track_list'    => $this->faker->text(),
+            'description'   => "dit is een beschrijving van het album",
+            'track_list'    => "1. nummer een
+                                2. nummer twee
+                                3. nummer drie
+                                4. nummer vier",
             'price'         => 50.50,
             'VAT'           => 50.50,
         ];
