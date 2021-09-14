@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Label;
 
 class ArtistController extends Controller
 {
@@ -53,9 +55,10 @@ class ArtistController extends Controller
     {
         $id = request()->route('artist');
 
-        $artist = Artist::get()->where('id', $id);
+        $artist = Artist::get()->where('id', $id)->first();
 
-        // dd($artist);
+        //$artist_id = $artist->get('id');
+        dd($artist);
 
         return view('artists/show', [
             'artist' => $artist,

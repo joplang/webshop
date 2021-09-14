@@ -22,7 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GenreSeeder::class);
         $this->call(LabelSeeder::class);
         $this->call(ArtistsSeeder::class);
-        $this->call(CustomersSeeder::class);
         $this->call(ProductsSeeder::class);
         $this->call(ReviewsSeeder::class);
         DB::table('roles')->insert([
@@ -31,7 +30,5 @@ class DatabaseSeeder extends Seeder
         DB::table('roles')->insert([
             'name' => 'customer',
         ]);
-
-
-    }    
+    }
 }
