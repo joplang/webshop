@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('id');
-            $table->foreign('id')->references('id')->on('users');
+            $table->foreign('id')->references('id')->on('products');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('status');
