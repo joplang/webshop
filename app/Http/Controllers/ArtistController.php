@@ -25,9 +25,9 @@ class ArtistController extends Controller
         $artists = Artist::all();
 
         //load the view and pass the artists
-        return View::make('artists.index')
-            ->with('artists', $artists);
-
+        return view('artists/main', [
+            'artists' => $artists,
+        ]);
     }
 
     /**
@@ -38,7 +38,7 @@ class ArtistController extends Controller
     public function create()
     {
         //load the create form (app/views/artists/create.blade.php)
-        return View::make('artists.create');
+        return view('artists/create');
     }
 
     /**
