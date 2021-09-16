@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artist;
+use App\Models\Label;
+use App\Models\Product;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -47,7 +49,7 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //blalalalla
     }
 
     /**
@@ -58,12 +60,19 @@ class ArtistController extends Controller
      */
     public function show($id)
     {
-        //get the artists
-        $artists = Artist::find($id);
+        $id = request()->route('artist');
 
-        //show the view and pass the artists to it
-        return View::make('artists.show')
-            ->with('artists', $artists);
+        $artist = Artist::get()->where('id', $id)->first();
+
+        $products = Product::get()->where('artist_id', $artist->id);
+
+        $label = Label::get()->where('id', $artist->label_id)->first();
+
+        return view('artists/show', [
+            'artist'    => $artist,
+            'products'  => $products,
+            'label'     => $label,
+        ]);
     }
 
     /**
