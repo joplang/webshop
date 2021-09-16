@@ -22,6 +22,7 @@ class ProductController extends Controller
 
         $products = Product::all();
 
+
         return view('products/main', [
             'products' => $products,
         ]);
@@ -60,7 +61,7 @@ class ProductController extends Controller
         $id = request()->route('product');
 
 
-        $product = Product::get()->where('id', $id)->first();
+        $product = Product::find($id)->first();
 
         $artist = Artist::get()->where('id', $product->artist_id)->first();
 

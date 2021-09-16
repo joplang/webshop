@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Label;
 use Illuminate\Http\Request;
+use App\Models\Artist;
 
 class LabelController extends Controller
 {
@@ -50,7 +51,17 @@ class LabelController extends Controller
      */
     public function show(label $label)
     {
-        //
+        $id = request()->route('label');
+
+        $label = Label::find($id)->first();
+
+        $artists = Artist::get()->where('label_id', $label->id);
+
+
+        return view('/labels/show', [
+            'label'     => $label,
+            'artists'   => $artists,
+        ]);
     }
 
     /**
