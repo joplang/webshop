@@ -22,8 +22,8 @@ class LabelFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->emoji(),
-            'description' => $this->faker->company(),
+            'name' => $this->faker->company(),
+            'description' => $this->faker->sentences(3, true),
         ];
     }
 }

@@ -23,7 +23,7 @@ class ReviewFactory extends Factory
     {
         return [
             'user_id' => 1,
-            'product_id'=> 1,
+            'product_id' => $this->faker->numberBetween(1, 10),
             'score'  => 3,
             'description' => $this->faker->sentence(),
         ];
