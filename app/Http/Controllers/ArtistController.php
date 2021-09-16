@@ -49,7 +49,7 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //blalalalla
     }
 
     /**
