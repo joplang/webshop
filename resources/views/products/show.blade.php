@@ -8,7 +8,6 @@
                         <h4>{{ $product->album_title }}</h4>
                         <div class="card-title"> 
                         <a href="/artists/{{ $artist->id }}">{{ $artist->name }}  </a> </div> 
-                       
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -19,7 +18,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <img src="https://picsum.photos/200/250
+                            <img src="https://picsum.photos/250/250
                             " class="img-fluid rounded-end" alt="...">
                         </div>
                     </div>
@@ -35,8 +34,18 @@
                         </div>
                     </div>
             </div>
-    </div>
 
+    </div>
+    <div class="row justify-content-center p-5">
+      <div class="card text-center">
+         <div class="card-header"><b>Reviews voor dit album</b></div>
+            @foreach ($reviews as $review)
+            <div class="card-body">
+                <div class="card-title">{{ $review->score }}/5☆</div>
+                    <div class="card-text">{{ $review->description }} </div>
+            </div>
+            @endforeach
+        </div>
 </div>
 
 @endsection
