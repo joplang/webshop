@@ -9,6 +9,7 @@ use Illuminate\Routing\Route;
 use Symfony\Component\Console\Helper\Helper as HelperHelper;
 use Symfony\Component\HttpFoundation\UrlHelper;
 use App\Models\Artist;
+use App\Models\Review;
 
 class ProductController extends Controller
 {
@@ -66,11 +67,13 @@ class ProductController extends Controller
 
         $artist = Artist::get()->where('id', $product->artist_id)->first();
 
+        $reviews = Review::get()->where('product_id', $id);
 
 
         return view('products/show', [
             'product' => $product,
             'artist'  => $artist,
+            'reviews' => $reviews,
         ]);
     }
 

@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<span class="d-block p-2 bg-dark text-white text-center">  <h2> {{ $artist->name }}</h2></span>
 
-<div class="container-fluid">
-        <h2> {{ $artist->name }}</h2>
-</div>
+
 <div class="container-fluid">
     <div class="row">
             @foreach ($products as $product)
