@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Genre;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class GenreController extends Controller
 {
@@ -50,7 +51,14 @@ class GenreController extends Controller
      */
     public function show(genre $genre)
     {
-        //
+        $genre = request()->route('genre');
+
+        $products = Product::get()->where('genre_id', $genre->id);
+
+        return view('genres/show', [
+            'genre'     => $genre,
+            'products'  => $products,
+        ]);
     }
 
     /**

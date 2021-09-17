@@ -51,9 +51,8 @@ class LabelController extends Controller
      */
     public function show(label $label)
     {
-        $id = request()->route('label');
+        $label = request()->route('label');
 
-        $label = Label::find($id)->first();
 
         $artists = Artist::get()->where('label_id', $label->id);
 
