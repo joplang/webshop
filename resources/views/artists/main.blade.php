@@ -2,12 +2,12 @@
 
 @section('content')
  <div class="container-fluid">
-     <div class="row">
+     <div class="row ">
          @foreach ($artists as $artist)
-             <div class="col-6">
-                 <div class="card m-2">
+             <div class="col-6  ">
+                 <div class="card m-2 rounded-pill w-50 ">
                      <a href="/artists/{{ $artist->id }}">
-                         <div class="card-header"> {{ $artist->name }} </div>
+                         <div class="card-header text-center"> <b>{{ $artist->name }}</b> </div>
                      </a>
                  </div>
              </div>

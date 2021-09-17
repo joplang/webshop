@@ -63,6 +63,7 @@ class ProductController extends Controller
 
         $product = Product::find($id)->first();
 
+
         $artist = Artist::get()->where('id', $product->artist_id)->first();
 
 

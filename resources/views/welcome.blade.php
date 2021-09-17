@@ -25,7 +25,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container-sm">
+<div class="container-sm" style="width: 50rem;">
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
