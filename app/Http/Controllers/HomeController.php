@@ -8,6 +8,7 @@ use App\Models\Artist;
 use App\Models\Label;
 use App\Models\Genre;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
