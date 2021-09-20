@@ -46,7 +46,7 @@
   <div class="row">
     <div class="col-6">
       <div class="card">
-        <div class="card-header">Onze genres!</div>
+        <div class="card-header"><b>Onze genres!</b></div>
         <ul class="list-group list-group-flush">
           @foreach ($genres as $genre)
             <li class="list-group-item"><a href="/genres/{{$genre->id}}">{{$genre->name}}</a></li>
@@ -55,7 +55,7 @@
       </div>
     <div class="col-6">
       <div class="card">
-        <div class="card-header">Platenlabels!</div>
+        <div class="card-header"><b>Platenlabels</b>!</div>
         <ul class="list-group list-group-flush">
           @foreach ($labels as $label)
           <li class="list-group-item"><a href="/labels/{{$label->id}}">{{$label->name}}</a></li>
