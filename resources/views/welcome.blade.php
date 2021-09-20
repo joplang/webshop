@@ -49,7 +49,7 @@
         <div class="card-header">Onze genres!</div>
         <ul class="list-group list-group-flush">
           @foreach ($genres as $genre)
-            <li class="list-group-item"><a href="/labels/{{$genre->id}}">{{$genre->name}}</a></li>
+            <li class="list-group-item"><a href="/genres/{{$genre->id}}">{{$genre->name}}</a></li>
            @endforeach
         </div>
       </div>
