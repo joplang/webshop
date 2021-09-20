@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Artist;
+use App\Models\Label;
+use App\Models\Genre;
+use Illuminate\Support\Facades\Lang;
 
 class HomeController extends Controller
 {
@@ -23,6 +28,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products   = Product::all();
+        $artists    = Artist::all();
+        $labels     = Label::all();
+        $genres     = Genre::all();
+
+        $highlights  = $products->slice(1, 5);
+
+        return view('welcome', [
+            'products'  => $products,
+            'artists'   => $artists,
+            'labels'    => $labels,
+            'genres'    => $genres,
+            'highlights' => $highlights,
+        ]);
     }
 }
