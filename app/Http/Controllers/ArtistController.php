@@ -38,7 +38,7 @@ class ArtistController extends Controller
     public function create()
     {
         //load the create form (app/views/artists/create.blade.php)
-        return View::make('artists.create');
+        return view('artists/create');
     }
 
     /**
