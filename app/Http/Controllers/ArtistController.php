@@ -62,7 +62,7 @@ class ArtistController extends Controller
     {
         $id = request()->route('artist');
 
-        $artist = Artist::get()->where('id', $id)->first();
+        $artist = Artist::find($id)->first();
 
         $products = Product::get()->where('artist_id', $artist->id);
 

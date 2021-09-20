@@ -2,13 +2,28 @@
 
 @section('content')
 
-<div class="container-fluid">
-    @foreach ($labels as $label)
-    <div class="card">
-        <div class="card-header">{{ $label->name }}</div>
-        <div class="card-body"> {{ $label->description }}</div>
+<div class="container-fluid ">
+    <div class="row">
+        @foreach ($labels as $label)
+        <div class="col-6">
+            <div class="card m-3" style="width: 30rem;">
+                <a href="/labels/{{ $label->id }}">
+                    <b>
+                        <div class="card-header">{{ $label->name }}</div>
+                    </b>
+                </a>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card-text"> {{ $label->description }}</div>
+                        </div>
+                        <div class="col-6"><img src="/imgs/labels/{{$label->id}}.jpg" class="img-fluid rounded-end" alt="..."></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        @endforeach
     </div>
-        
-    @endforeach
 </div>
 @endsection

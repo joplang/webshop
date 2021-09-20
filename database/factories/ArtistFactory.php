@@ -23,7 +23,7 @@ class ArtistFactory extends Factory
     {
         return [
             'name'      => $this->faker->name(),
-            'label_id'  => 1,
+            'label_id'  => $this->faker->numberBetween(1, 4),
         ];
     }
 }
