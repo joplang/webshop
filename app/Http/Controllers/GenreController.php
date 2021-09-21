@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Genre;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 
 class GenreController extends Controller
 {

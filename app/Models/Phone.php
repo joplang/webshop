@@ -11,5 +11,5 @@ class Phone extends Model
 {
     use HasFactory, HasUserStamps;
 
-    protected $table = 'phone_numbers';
+    protected $table = 'phones';
 }
