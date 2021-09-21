@@ -14,8 +14,8 @@
                 </a>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-4">
-                            <div class="card-text"> {{ $label->description }}</div>
+                        <div class="col-6">
+                            <div class="card-text text-truncate"> {{ $label->description }}</div>
                         </div>
                         <div class="col-6"><img src="/imgs/labels/{{$label->id}}.jpg" class="img-fluid rounded-end" alt="..."></div>
                     </div>
