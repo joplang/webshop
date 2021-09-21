@@ -11,7 +11,10 @@
                         @foreach ($products as $key => $product)
                             <div class="product-detail">
                                 <div class="dingetje">
-                                    {{ $product }}
+                                    {{ $product->album_title }}
+                                    {{ $product->description }}
+                                    <br>
+                                    {{ $product->price }}
                                 </div>
                                 <input id="p_{{ $key }}" type="text" value="{{ isset($cart[$key]) ? $cart[$key] : '' }}">
                                 <button p_id="{{ $key }}">Add</button>
