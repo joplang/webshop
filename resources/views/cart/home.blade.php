@@ -14,10 +14,10 @@
                                     {{ $product->album_title }}
                                     {{ $product->description }}
                                     <br>
-                                    {{ $product->price }}
+                                    €{{ $product->price }}
                                 </div>
                                 <input id="p_{{ $key }}" type="text" value="{{ isset($cart[$key]) ? $cart[$key] : '' }}">
-                                <button p_id="{{ $key }}">Add</button>
+                                <button p_id="{{ $key }}">Voeg toe</button>
                             <div>
                         @endforeach
                     </div>
