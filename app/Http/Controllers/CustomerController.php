@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Address;
+use App\Models\Phone;
+use App\Models\Review;
 
 class CustomerController extends Controller
 {
@@ -46,7 +50,17 @@ class CustomerController extends Controller
      */
     public function show(Customer $customers)
     {
-        //
+
+        $user        = Auth::user();
+        $id          = Auth::id();
+        $address     = Address::get()->where('user_id', $id);
+        $phone       = Phone::get()->where('user_id', $id);
+        $reviews     = Review::get()->where('user_id', $id);
+
+        return view('customers/show', [
+            'user'      => $user,
+            'reviews'    => $reviews,
+        ]);
     }
 
     /**
