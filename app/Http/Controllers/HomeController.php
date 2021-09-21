@@ -77,7 +77,7 @@ class HomeController extends Controller
             ]);
         }
     }
-    
+
     private function totalCost()
     {
         $cart = Session::get('cart');
