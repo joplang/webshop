@@ -10,10 +10,16 @@
             <div class="card m-3" style="width: 30rem;">
                 <div class="card-header"><b>{{ $user->first_name }} {{ $user->last_name }}</b></div>
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">{{$user->email}}</li>
-                        <li class="list-group-item">Adres</li>
-                        <li class="list-group-item">Telefoonnummer</li>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card-text">{{$user->email}}</div>
+                            <div class="card-text">Adres</div>
+                            <div class="card-text">Telefoonnummer</div>
+                        </div>
+                        <div class="col-6">
+                            <img src="/imgs/users/1.jpg" class="img-fluid rounded-end" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
