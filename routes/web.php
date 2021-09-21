@@ -21,6 +21,7 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
+Route::post('/ajax', [\App\Http\Controllers\HomeController::class, 'ajax'])->name('ajax');
 
 Route::resource('customers', \App\Http\Controllers\CustomerController::class);
 
