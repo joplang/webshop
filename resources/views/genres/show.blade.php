@@ -6,7 +6,7 @@
         <div class="col-8">
             <div class="row justify-content-center">
                 <div class="card m-4" style="width: 40rem;">
-                    <img src="https://picsum.photos/400/300" class="card-img-top" alt="...">
+                    <img src="/imgs/genres/{{$genre->id}}.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h3 class="card-title">{{ $genre->name }}</h3>
                       <p class="card-text">{{ $genre->description}}.</p>
