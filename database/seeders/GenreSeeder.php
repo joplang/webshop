@@ -17,9 +17,19 @@ class GenreSeeder extends Seeder
         Genre::create([
             'name' => 'Power Metal',
             'description' => 'het beste genre',
-            'created_by' => null,
-            'updated_by' => null,    
         ]);
-        Genre::factory(5)->create();
+        Genre::create([
+            'name' => 'Folk Punk',
+            'description' => 'het rammeligste genre',
+        ]);
+        Genre::create([
+            'name' => 'Eurodisco',
+            'description' => 'het glitterigste genre',
+        ]);
+        Genre::create([
+            'name' => 'Ska',
+            'description' => 'het stuiterigst genre',
+        ]);
+        // Genre::factory(5)->create();
     }
 }
