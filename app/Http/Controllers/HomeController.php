@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Artist;
 use App\Models\Label;
 use App\Models\Genre;
+use Exception;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Session;
 
@@ -43,5 +44,54 @@ class HomeController extends Controller
             'genres'    => $genres,
             'highlights' => $highlights,
         ]);
+
+        if (!Session::exists('cart')) {
+            Session::put('cart', $products);
+        } else {
+            Session::remove('cart');
+        }
+
+        return view('home', [
+            'products'  => $products,
+            'cart'      => Session::get('cart'),
+        ]);
+    }
+
+    public function ajax(Request $request)
+    {
+        try {
+            $session = Session::get('cart');
+            $session[(int)$request->product_id] = (int)$request->quantity;
+            Session::put('cart', $session);
+
+            return response()->json([
+                'success'       => true,
+                'num_products'  => count($session),
+                'prices'        => $this->totalCost(),
+            ]);
+        }
+        catch(Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
+    }
+
+    private function totalCost()
+    {
+        $cart = Session::get('cart');
+
+        $total = 0;
+        $vat = 0;
+
+        foreach ($cart as $key => $product) {
+            $p = Product::findOrFail($key);
+            $total += $p->price;
+            $vat += $p->vat;
+        }
+
+        return [$total, $vat];
+
     }
 }
