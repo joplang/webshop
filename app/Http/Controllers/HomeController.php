@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Artist;
 use App\Models\Label;
 use App\Models\Genre;
-use Exception;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {

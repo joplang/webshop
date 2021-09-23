@@ -7,7 +7,7 @@
                 <div class="card-header">
                         <h4>{{ $product->album_title }}</h4>
                         <div class="card-title"> 
-                        <a href="/artists/{{ $artist->id }}">{{ $artist->name }}  </a> </div> 
+                        <a href="/artists/{{ $product->artist->id }}">{{ $product->artist->name }}  </a> </div> 
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -39,7 +39,7 @@
     <div class="row justify-content-center p-5">
       <div class="card text-center">
          <div class="card-header"><b>Reviews voor dit album</b></div>
-            @foreach ($reviews as $review)
+            @foreach ($product->reviews as $review)
             <div class="card-body">
                 <div class="card-title">{{ $review->score }}/5☆</div>
                     <div class="card-text">{{ $review->description }} </div>
