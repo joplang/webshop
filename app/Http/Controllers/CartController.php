@@ -20,22 +20,24 @@ class CartController extends Controller
         $products = Product::all();
       
         if (!Session::exists('cart')) {
-            Session::put('cart', $products);
+            Session::put('cart');
         } else {
-            Session::remove('cart');
+            // Session::remove('cart');
         }
 
         return view('cart/home', [
             'products'  => $products,
             'cart'      => Session::get('cart'),
+
         ]);
     }
 
-    public function ajax(Request $request)
+    public function addToCart(Request $request)
     {
         try {
             $session = Session::get('cart');
             $session[(int)$request->product_id] = (int)$request->quantity;
+            
             Session::put('cart', $session);
 
             return response()->json([
@@ -59,10 +61,11 @@ class CartController extends Controller
         $total = 0;
         $vat = 0;
 
-        foreach ($cart as $key => $product) {
-            $p = Product::findOrFail($key);
-            $total += $p->price;
-            $vat += $p->vat;
+        foreach ($cart as $productId => $quantity) {
+            $product = Product::findOrFail($productId);
+
+            $total += ($product->price * $quantity);
+            $vat += $product->vat;
         }
 
         return [$total, $vat];
