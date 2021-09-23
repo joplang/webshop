@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
- <div class="container-fluid">
+ <div class="container-sm">
      <div class="row ">
          @foreach ($artists as $artist)
              <div class="col-6  ">

@@ -37,6 +37,7 @@ class HomeController extends Controller
 
         $highlights  = $products->slice(1, 5);
 
+
         return view('welcome', [
             'products'  => $products,
             'artists'   => $artists,

@@ -4,7 +4,7 @@
 <span class="d-block p-2 bg-dark text-white text-center">  <h2> {{ $artist->name }}</h2></span>
 
 
-<div class="container-fluid">
+<div class="container-sm">
     <div class="row">
             @foreach ($products as $product)
                 <div class="col-6">
