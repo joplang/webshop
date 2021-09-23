@@ -5,12 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Artist;
 use App\Models\Label;
 use App\Models\Product;
-use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Validation\Validator;
 use Illuminate\View\View;
-use Symfony\Component\Console\Input\Input;
 
 class ArtistController extends Controller
 {

@@ -3,13 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Faker\Extension\Helper;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
-use Symfony\Component\Console\Helper\Helper as HelperHelper;
-use Symfony\Component\HttpFoundation\UrlHelper;
-use App\Models\Artist;
-use App\Models\Review;
 
 class ProductController extends Controller
 {
@@ -56,24 +50,10 @@ class ProductController extends Controller
      * @param  \App\Models\products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $products)
+    public function show(Product $product)
     {
-
-        $id = request()->route('product');
-
-
-        $product = Product::find($id)->first();
-
-
-        $artist = Artist::get()->where('id', $product->artist_id)->first();
-
-        $reviews = Review::get()->where('product_id', $id);
-
-
         return view('products/show', [
             'product' => $product,
-            'artist'  => $artist,
-            'reviews' => $reviews,
         ]);
     }
 

@@ -10,14 +10,22 @@ use Sqits\UserStamps\Concerns\HasUserStamps;
 class Product extends Model
 {
     use HasFactory, HasUserStamps;
-
+    
     protected $table = 'products';
+    protected $with = [
+        'artist',
+        'reviews'
+    ];
 
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class, 'artist_id');
+    }
 
-
-
-
-
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'product_id');
+    }
 
     public static function showProduct($query, $id)
     {
