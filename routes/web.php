@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::resource('/', \App\Http\Controllers\HomeController::class);
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
 
 Route::get('/home', function () {
