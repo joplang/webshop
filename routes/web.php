@@ -21,7 +21,7 @@ Route::get('/home', function () {
     return view('welcome');
 });
 
-Route::post('/ajax', [\App\Http\Controllers\HomeController::class, 'ajax'])->name('ajax');
+Route::post('/add-tocart', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('add-tocart');
 
 Route::resource('customers', \App\Http\Controllers\CustomerController::class);
 

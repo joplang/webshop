@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -16,8 +17,8 @@
                                     <br>
                                     €{{ $product->price }}
                                 </div>
-                                <input id="p_{{ $key }}" type="text" value="{{ isset($cart[$key]) ? $cart[$key] : '' }}">
-                                <button p_id="{{ $key }}">Voeg toe</button>
+                                <input id="p_{{ $product->id }}" type="text" value="{{ isset($cart[$product->id]) ? $cart[$product->id] : '' }}">
+                                <button p_id="{{ $product->id }}">Voeg toe</button>
                             <div>
                         @endforeach
                     </div>
@@ -39,7 +40,7 @@
             let quantity = $('#p_' + product_id).val()
             axios({
                 method: 'POST',
-                url: '{{ route("ajax") }}',
+                url: '{{ route("add-tocart") }}',
                 
                 data: {
                     product_id: product_id,
