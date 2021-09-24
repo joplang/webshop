@@ -17,8 +17,12 @@
                                     <br>
                                     €{{ $product->price }}
                                 </div>
+
                                 <input id="p_{{ $product->id }}" type="text" value="{{ isset($cart[$product->id]) ? $cart[$product->id] : '' }}">
-                                <button p_id="{{ $product->id }}">Voeg toe</button>
+
+                                <button class="add" p_id="{{ $product->id }}">Voeg toe</button>
+                                <button class="remove" p_id="{{ $product->id }}">Verwijder product</button>
+
                             <div>
                         @endforeach
                     </div>
@@ -35,7 +39,8 @@
 @push('scripts')
 
     <script>
-        $(document).on('click', '.product-detail button', function(event) {
+        //add product quantity to cart
+        $(document).on('click', '.add', function(event) {
             let product_id = $(this).attr('p_id')
             let quantity = $('#p_' + product_id).val()
             axios({
@@ -49,6 +54,27 @@
             }).then(function(response) {
                 if (response.data.success) {
                     $('.products-container').append('<div class="winkelmand">' + response.data.product.first_name + '</div>')
+                }
+            }).catch(function(error) {
+            })
+        })
+
+        //remove product from cart
+        $(document).on('click', '.remove', function(event) {
+            let product_id = $(this).attr('p_id')
+            let quantity = $('#p_' + product_id).val()
+
+            axios({
+                method: 'POST',
+                url: '{{ route("remove-fromcart") }}',
+                
+                data: {
+                    product_id: product_id,
+                    quantity: quantity,
+                }
+            }).then(function(response) {
+                if (response.data.success) {
+                    $('#p_' + product_id).val('')
                 }
             }).catch(function(error) {
             })

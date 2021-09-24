@@ -18,7 +18,7 @@ class CartController extends Controller
     public function index()
     {
         $products = Product::all();
-      
+
         if (!Session::exists('cart')) {
             Session::put('cart');
         } else {
@@ -37,7 +37,7 @@ class CartController extends Controller
         try {
             $session = Session::get('cart');
             $session[(int)$request->product_id] = (int)$request->quantity;
-            
+
             Session::put('cart', $session);
 
             return response()->json([
@@ -85,7 +85,28 @@ class CartController extends Controller
      */
     public function removeFromCart (Request $request)
     {
-        $request->session('cart')->pull->product_id;
+        try {
+            $session = Session::get('cart');
+
+            if(array_key_exists($request->product_id, $session)) {
+                unset($session[$request->product_id]);
+            }
+
+            Session::put('cart', $session);
+
+            return response()->json([
+                'success'       => true,
+                'num_products'  => count($session),
+                'prices'        => $this->totalCost(),
+            ]);
+        }
+        catch(Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
+
     }
     /**
      * Store a newly created resource in storage.
