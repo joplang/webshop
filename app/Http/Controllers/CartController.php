@@ -87,7 +87,10 @@ class CartController extends Controller
     {
         try {
             $session = Session::get('cart');
-            $request->session('cart')->pull->product_id;
+
+            if(array_key_exists($request->product_id, $session)) {
+                unset($session[$request->product_id]);
+            }
 
             Session::put('cart', $session);
 
