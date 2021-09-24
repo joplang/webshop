@@ -80,7 +80,13 @@ class CartController extends Controller
     {
         //
     }
-
+    /**
+     * Remove item from cart
+     */
+    public function removeFromCart (Request $request)
+    {
+        $request->session('cart')->pull->product_id;
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -109,9 +115,10 @@ class CartController extends Controller
      * @param  \App\Models\cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cart $cart)
+    public function edit(Request $request)
     {
-        //
+        //retrieving and deleting an item
+        // $value = $request->session()->pull('key', 'default');
     }
 
     /**
