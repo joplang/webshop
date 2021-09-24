@@ -22,6 +22,7 @@ Route::get('/home', function () {
 });
 
 Route::post('/add-tocart', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('add-tocart');
+Route::post('/remove-fromcart', [\App\Http\Controllers\CartController::class, 'removeFromCart'])->name('remove-fromcart');
 
 Route::resource('customers', \App\Http\Controllers\CustomerController::class);
 
