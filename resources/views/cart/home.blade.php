@@ -19,6 +19,9 @@
                                 </div>
                                 <input id="p_{{ $product->id }}" type="text" value="{{ isset($cart[$product->id]) ? $cart[$product->id] : '' }}">
                                 <button p_id="{{ $product->id }}">Voeg toe</button>
+                                <div class="product-remove">
+                                <button p_id="{{ $product->id }}">Verwijder product</button>
+                                </div>
                             <div>
                         @endforeach
                     </div>
@@ -41,6 +44,24 @@
             axios({
                 method: 'POST',
                 url: '{{ route("add-tocart") }}',
+                
+                data: {
+                    product_id: product_id,
+                    quantity: quantity,
+                }
+            }).then(function(response) {
+                if (response.data.success) {
+                    $('.products-container').append('<div class="winkelmand">' + response.data.product.first_name + '</div>')
+                }
+            }).catch(function(error) {
+            })
+        })
+        $(document).on('click', '.product-remove button', function(event) {
+            let product_id = $(this).attr('p_id')
+            let quantity = $('#p_' + product_id).val()
+            axios({
+                method: 'POST',
+                url: '{{ route("remove-fromcart") }}',
                 
                 data: {
                     product_id: product_id,
