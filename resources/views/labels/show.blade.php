@@ -19,7 +19,7 @@
                 <div class="card-header text-center"><b>Al artiesten van {{ $label->name }}:</b></div>
                 <div class="card-text text-center">Klik op de artiest voor meer informatie!</div>
             </div>
-                @foreach ($artists as $artist)
+                @foreach ($label->artists as $artist)
                 <div class="card border-dark m-4 p-2">
                         <div class="card-title text-center">
                             <a href="/artists/{{$artist->id}}">{{ $artist->name }}</a>

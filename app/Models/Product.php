@@ -10,12 +10,18 @@ use Sqits\UserStamps\Concerns\HasUserStamps;
 class Product extends Model
 {
     use HasFactory, HasUserStamps;
-    
+
     protected $table = 'products';
     protected $with = [
         'artist',
         'reviews'
     ];
+
+
+
+
+
+
 
     public function artist()
     {
@@ -32,6 +38,7 @@ class Product extends Model
 
         return $query->where('id', '=', $id);
     }
+
 
     public function scopePriceGreaterThan($query, $price)
     {
