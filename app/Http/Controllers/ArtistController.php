@@ -55,20 +55,10 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Artist $artist)
     {
-        $id = request()->route('artist');
-
-        $artist = Artist::find($id)->first();
-
-        $products = Product::get()->where('artist_id', $artist->id);
-
-        $label = Label::get()->where('id', $artist->label_id)->first();
-
         return view('artists/show', [
             'artist'    => $artist,
-            'products'  => $products,
-            'label'     => $label,
         ]);
     }
 
