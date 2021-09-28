@@ -12,9 +12,7 @@ class Label extends Model
     use HasFactory, HasUserStamps;
 
     protected $table = 'labels';
-    protected $with = [
-        'artists',
-    ];
+
 
 
     public function artists()
