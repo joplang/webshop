@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
 
 
-Route::get('/home', function () {
-    return view('welcome');
-});
+Route::get('/search/', [\App\Http\Controllers\HomeController::class, 'search'])->name('search');
+
 
 Route::post('/add-tocart', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('add-tocart');
 Route::post('/remove-fromcart', [\App\Http\Controllers\CartController::class, 'removeFromCart'])->name('remove-fromcart');
