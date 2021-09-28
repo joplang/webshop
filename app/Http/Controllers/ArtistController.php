@@ -65,6 +65,8 @@ class ArtistController extends Controller
 
         $label = Label::get()->where('id', $artist->label_id)->first();
 
+        // genre?
+
         return view('artists/show', [
             'artist'    => $artist,
             'products'  => $products,

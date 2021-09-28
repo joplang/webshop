@@ -106,7 +106,6 @@ class CartController extends Controller
                 'message'   => $e->getMessage(),
             ]);
         }
-
     }
     /**
      * Store a newly created resource in storage.
@@ -156,12 +155,13 @@ class CartController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * Empty cart function?
      *
      * @param  \App\Models\cart  $cart
      * @return \Illuminate\Http\Response
      */
     public function destroy(Cart $cart)
     {
-        //
+        //winkelmandje leeg functie
     }
 }
