@@ -10032,3 +10032,7 @@ body {
   flex-direction: column;
   background-color: #2a0944;
 }
+
+img {
+  border-radius: 1rem;
+}

@@ -15,15 +15,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index']);
 
 
 Route::get('/search/', [\App\Http\Controllers\HomeController::class, 'search'])->name('search');
+Route::get('/profile', [\App\Http\Controllers\CustomerController::class, 'show'])->middleware('auth');
 
 
 Route::post('/add-tocart', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('add-tocart');
 Route::post('/remove-fromcart', [\App\Http\Controllers\CartController::class, 'removeFromCart'])->name('remove-fromcart');
 
-Route::resource('customers', \App\Http\Controllers\CustomerController::class);
 
 Route::resource('products', \App\Http\Controllers\ProductController::class);
 
