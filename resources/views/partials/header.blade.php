@@ -26,9 +26,9 @@
                     <i class="fa fa-shopping-cart"></i>Winkelmand
                       <span class="badge badge-light">3</span>
                   </a>
-                </li>
-                      <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+               </li>
+                     <form class="d-flex" action="{{ route('search') }}" method="GET">
+                <input class="form-control me-2" type="text" name="search"  placeholder="Search" aria-label="Search" required/>
                 <button class="btn btn-outline-success" type="submit">Search</button>
               </form>
             <ul class="navbar-nav">

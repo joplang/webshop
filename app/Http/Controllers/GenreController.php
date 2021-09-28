@@ -49,15 +49,14 @@ class GenreController extends Controller
      * @param  \App\Models\genre  $genre
      * @return \Illuminate\Http\Response
      */
-    public function show(genre $genre)
+    public function show(Genre $genre)
     {
-        $genre = request()->route('genre');
 
-        $products = Product::get()->where('genre_id', $genre->id);
+        // $products = Product::get()->where('genre_id', $genre->id);
 
         return view('genres/show', [
             'genre'     => $genre,
-            'products'  => $products,
+            // 'products'  => $products,
         ]);
     }
 

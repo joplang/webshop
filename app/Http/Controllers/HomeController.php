@@ -6,6 +6,7 @@ use App\Models\Product;
 use App\Models\Artist;
 use App\Models\Label;
 use App\Models\Genre;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -41,5 +42,35 @@ class HomeController extends Controller
             'genres'    => $genres,
             'highlights' => $highlights,
         ]);
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        $products = Product::query()
+            ->where('album_title', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->orWhere('price', 'LIKE', "%{$search}%")
+            ->orWhere('year', 'LIKE', "%{$search}%")
+            ->get();
+
+        $artists = Artist::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->get();
+
+        $genres = Genre::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+
+        $labels = Label::query()
+            ->where('name', 'LIKE', "%{$search}%")
+            ->orWhere('description', 'LIKE', "%{$search}%")
+            ->get();
+
+
+
+        return view('search', compact('products', 'artists', 'genres', 'labels'));
     }
 }

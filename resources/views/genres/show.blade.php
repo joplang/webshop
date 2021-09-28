@@ -19,7 +19,7 @@
                 <div class="card-header text-center"><b>Al onze producten in de categorie {{ $genre->name }}:</b></div>
                 <div class="card-text text-center">Klik op het product voor meer informatie!</div>
             </div>
-                @foreach ($products as $product)
+                @foreach ($genre->products as $product)
                 <div class="card border-dark m-4 p-2">
                         <div class="card-title text-center"> 
                             <a href="/artists/{{$product->id}}"><b>{{ $product->album_title }}</b></a>    €{{ $product->price }}
