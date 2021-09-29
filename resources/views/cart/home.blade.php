@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                 @inject('total', '\App\Http\Controllers\CartController')
-                    {{-- <div class="card-header">{{ __('Winkelmand') }} is {{ $total->totalCost() }}</div> --}}
+                    <div class="card-header">{{ __('Winkelmand') }} is totalcost</div>
 
                     <div class="products-container">
                         @foreach ($products as $key => $product)
@@ -54,7 +54,8 @@
                 }
             }).then(function(response) {
                 if (response.data.success) {
-                    $('.products-container').append('<div class="winkelmand">' + response.data.product.first_name + '</div>')
+                    $('.products-container').append('<div class="shopcart">' + response.data.product.first_name + '</div>')
+                    $('#cartcounter').html(response.data.num_products)
                 }
             }).catch(function(error) {
             })
@@ -76,12 +77,14 @@
             }).then(function(response) {
                 if (response.data.success) {
                     $('#p_' + product_id).val('')
+                    $('#cartcounter').html(response.data.num_products)
                 }
             }).catch(function(error) {
             })
         })
 
         //show total cost price
+
         
     </script>
 
