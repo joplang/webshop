@@ -24,7 +24,7 @@
                 <li class="nav-item">
                   <a class="btn btn-success" href="/cart">
                     <i class="fa fa-shopping-cart"></i>Winkelmand
-                      <span class="badge badge-light">3</span>
+                      <span class="badge badge-light">{{ count((array) session('cart')) }}</span>
                   </a>
                </li>
                      <form class="d-flex" action="{{ route('search') }}" method="GET">
