@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<span class="d-block bg-dark text-white text-center">  
+<span class="d-block bg-dark text-white text-center" id="banner">  
     <h2>Het is Power Metal-week!</h2>
     <p>De hele week 50.50% korting op alle <a href="/labels/1">Power Metal</a></p>
 </span>
@@ -24,7 +24,6 @@
             <div class="carousel-caption d-none d-md-block">
               <div class="card">
                 <a href="/products/{{$highlight->id}}"> <h4>{{$highlight->album_title}}</h4> </a>
-                <p>{{$highlight->track_list}}.</p>
                 <h6> €{{$highlight->price}}</h6>
               </div>
           </div>
