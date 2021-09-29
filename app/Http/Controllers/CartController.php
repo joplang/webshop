@@ -54,7 +54,7 @@ class CartController extends Controller
         }
     }
 
-    private function totalCost()
+    public function totalCost()
     {
         $cart = Session::get('cart');
 
