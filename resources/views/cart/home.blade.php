@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Winkelmand') }}</div>
+                    <div class="card-header">{{ __('Winkelmand') }} is totalprice</div>
 
                     <div class="products-container">
                         @foreach ($products as $key => $product)
