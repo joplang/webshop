@@ -50,15 +50,8 @@ class CustomerController extends Controller
     public function show(User $user)
     {
 
-        $user        = Auth::user();
-        $id          = Auth::id();
-        $address     = Address::get()->where('user_id', $id);
-        $phone       = Phone::get()->where('user_id', $id);
-        $reviews     = Review::get()->where('user_id', $id);
-
         return view('customers/show', [
-            'user'      => $user,
-            'reviews'    => $reviews,
+            'user'      => Auth::user(),
         ]);
     }
 
