@@ -54,7 +54,7 @@
                 }
             }).then(function(response) {
                 if (response.data.success) {
-                    $('.products-container').append('<div class="shopcart">' + response.data.product.first_name + '</div>')
+                    $('.products-container').append('<div class="products-container">' + response.data.product.first_name + '</div>')
                     $('#cartcounter').html(response.data.num_products)
                 }
             }).catch(function(error) {

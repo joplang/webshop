@@ -23,7 +23,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="btn btn-success" href="/cart">
-                  <div class="shopcart">
+                  <div class="products-container">
                     <i class="fa fa-shopping-cart"></i>Winkelmand
                       <span id="cartcounter" class="badge badge-light">{{ count((array) session('cart')) }}</span></div>
                   </a>
