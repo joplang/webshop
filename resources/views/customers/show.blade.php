@@ -27,7 +27,7 @@
             <div class="card m-3" style="width: 30rem;">
                 <div class="card-header"><b>Reviews</b></div>
                 <div class="card-body">
-                    @foreach ($reviews as $review)
+                    @foreach ($user->reviews as $review)
                             <a href="/products/{{ $review->product_id }}">
                                 <div class="card-title">{{ $review->score }}/5☆</div>
                             </a>

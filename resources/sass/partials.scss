@@ -3,16 +3,9 @@ footer {
     border-style: ridge;
 }
 
-nav {
+.navbar {
     box-shadow: 10px 10px 20px #c0c3c9;
     opacity: 0.9;
-}
-
-.card {
-    background-color: #c0c3c9;
-    border-style: ridge;
-    border-radius: 1rem;
-    text-align: center;
 }
 
 #banner {
@@ -23,12 +16,22 @@ nav {
     border-style: ridge;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
+//pagination
+.pagination {
     background-color: #2a0944;
+    color: #c0c3c9;
+}
+.page-link {
+    background-color: #2a0944;
+    color: #c0c3c9;
 }
 
-img {
-    border-radius: 1rem;
+.page-item.disabled .page-link {
+    background-color: #2a0944;
+    color: #c0c3c9;
+}
+
+.page-item.active .page-link {
+    background-color: #c0c3c9;
+    color: #2a0944;
 }

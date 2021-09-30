@@ -10002,29 +10002,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
-footer {
-  opacity: 0.6;
-  border-style: ridge;
-}
-
-nav {
-  box-shadow: 10px 10px 20px #c0c3c9;
-  opacity: 0.9;
-}
-
 .card {
   background-color: #c0c3c9;
   border-style: ridge;
   border-radius: 1rem;
   text-align: center;
-}
-
-#banner {
-  position: fixed;
-  padding: 1rem;
-  margin: 1rem;
-  box-sizing: border-box;
-  border-style: ridge;
 }
 
 body {
@@ -10035,4 +10017,42 @@ body {
 
 img {
   border-radius: 1rem;
+}
+
+footer {
+  opacity: 0.6;
+  border-style: ridge;
+}
+
+.navbar {
+  box-shadow: 10px 10px 20px #c0c3c9;
+  opacity: 0.9;
+}
+
+#banner {
+  position: fixed;
+  padding: 1rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  border-style: ridge;
+}
+
+.pagination {
+  background-color: #2a0944;
+  color: #c0c3c9;
+}
+
+.page-link {
+  background-color: #2a0944;
+  color: #c0c3c9;
+}
+
+.page-item.disabled .page-link {
+  background-color: #2a0944;
+  color: #c0c3c9;
+}
+
+.page-item.active .page-link {
+  background-color: #c0c3c9;
+  color: #2a0944;
 }

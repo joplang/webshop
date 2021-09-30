@@ -23,7 +23,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 @include('partials.header')
-
 <body>
     <div id="app">
         <main class="py-4">
