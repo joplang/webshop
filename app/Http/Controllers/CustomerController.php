@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Address;
 use App\Models\Phone;
 use App\Models\Review;
+use App\Models\User;
 
 class CustomerController extends Controller
 {
@@ -47,7 +47,7 @@ class CustomerController extends Controller
      * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $customers)
+    public function show(User $user)
     {
 
         $user        = Auth::user();
@@ -68,7 +68,7 @@ class CustomerController extends Controller
      * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function edit(Customer $customers)
+    public function edit(User $user)
     {
         //
     }
@@ -80,7 +80,7 @@ class CustomerController extends Controller
      * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Customer $customers)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -91,7 +91,7 @@ class CustomerController extends Controller
      * @param  \App\Models\customers  $customers
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Customer $customers)
+    public function destroy(User $user)
     {
         //
     }

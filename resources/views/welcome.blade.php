@@ -6,7 +6,7 @@
     <p>De hele week 50.50% korting op alle <a href="/labels/1">Power Metal</a></p>
 </span>
 
-<div class="container-sm" style="width: 50rem;">
+<div class="container-sm d-none d-lg-block" style="width: 50%;">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -39,8 +39,9 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+  </div>
 </div>
+
 <div class="container-sm p-2">
   <div class="row">
     <div class="col-6">
