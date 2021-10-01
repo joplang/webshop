@@ -6,8 +6,8 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                @inject('total', '\App\Http\Controllers\CartController')
-                    <div class="card-header">{{ __('Winkelmand') }} is {{serialize($total)}}</div>
+                        
+                    <div class="card-header">{{ __('Winkelmand') }} is {{ '' }}</div>
 
                         @foreach ($products as $key => $product)
                             <div class="product-detail">
