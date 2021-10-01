@@ -24,8 +24,6 @@ Route::get('/profile', [\App\Http\Controllers\CustomerController::class, 'show']
 
 Route::post('/add-tocart', [\App\Http\Controllers\CartController::class, 'addToCart'])->name('add-tocart');
 Route::post('/remove-fromcart', [\App\Http\Controllers\CartController::class, 'removeFromCart'])->name('remove-fromcart');
-Route::post('/show-totalcost', [\App\Http\Controllers\CartController::class, 'totalCost'])->name('show-totalcost');
-
 
 Route::resource('products', \App\Http\Controllers\ProductController::class);
 

@@ -28,6 +28,7 @@ class CartController extends Controller
         return view('cart/home', [
             'products'  => $products,
             'cart'      => Session::get('cart'),
+            'total_cost'    => $this->totalCost(),
 
         ]);
     }
@@ -41,9 +42,9 @@ class CartController extends Controller
             Session::put('cart', $session);
 
             return response()->json([
-                'success'       => true,
-                'num_products'  => count($session),
-                'prices'        => $this->totalCost(),
+                'success'                   => true,
+                'num_products'              => count($session),
+                'total_cost'                => $this->totalCost(),
             ]);
         }
         catch(Exception $e) {
@@ -67,8 +68,10 @@ class CartController extends Controller
             $total += ($product->price * $quantity);
             $vat += $product->vat;
         }
-
-        return [$total, $vat];
+        return [
+            'total' => number_format($total, 2, ',', '.'), 
+            'vat' => $vat
+        ];
 
     }
     /**
@@ -97,7 +100,7 @@ class CartController extends Controller
             return response()->json([
                 'success'       => true,
                 'num_products'  => count($session),
-                'prices'        => $this->totalCost(),
+                'total_cost'        => $this->totalCost(),
             ]);
         }
         catch(Exception $e) {
