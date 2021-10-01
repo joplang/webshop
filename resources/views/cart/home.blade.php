@@ -7,12 +7,11 @@
             <div class="col-md-8">
                 <div class="card">
                 @inject('total', '\App\Http\Controllers\CartController')
-                    <div class="card-header">{{ __('Winkelmand') }} is totalcost</div>
+                    <div class="card-header">{{ __('Winkelmand') }} is {{serialize($total)}}</div>
 
-                    <div class="products-container">
                         @foreach ($products as $key => $product)
                             <div class="product-detail">
-                                <div class="dingetje">
+                                <div class="shopcart">
                                     {{ $product->album_title }}
                                     {{ $product->description }}
                                     <br>
@@ -26,7 +25,6 @@
 
                             <div>
                         @endforeach
-                    </div>
 
                     <div class="cart">
                         <ul class="cart-items"></ul>
@@ -54,7 +52,7 @@
                 }
             }).then(function(response) {
                 if (response.data.success) {
-                    $('.products-container').append('<div class="products-container">' + response.data.product.first_name + '</div>')
+                    //$('.shopcart').append('<div class="shopcart">' + response.data.product.first_name + '</div>')
                     $('#cartcounter').html(response.data.num_products)
                 }
             }).catch(function(error) {
