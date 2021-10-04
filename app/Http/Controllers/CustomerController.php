@@ -49,7 +49,6 @@ class CustomerController extends Controller
      */
     public function show(User $user)
     {
-
         return view('customers/show', [
             'user'      => Auth::user(),
         ]);
