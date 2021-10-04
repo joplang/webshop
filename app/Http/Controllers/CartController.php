@@ -18,16 +18,15 @@ class CartController extends Controller
     public function index()
     {
         $products = Product::all();
-
         if (!Session::exists('cart')) {
             Session::put('cart');
         } else {
             // Session::remove('cart');
         }
 
-        return view('cart/home', [
-            'products'  => $products,
-            'cart'      => Session::get('cart'),
+        return view('cart.home', [
+            'products'      => $products,
+            'cart'          => Session::get('cart'),
             'total_cost'    => $this->totalCost(),
 
         ]);
