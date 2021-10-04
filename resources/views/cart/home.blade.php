@@ -9,7 +9,7 @@
         
 
                     <div class="card-header">Winkelmand is 
-                        {{-- &euro; <span id="total-cost">{{ $total_cost['total'] }}</span> --}}
+                        &euro; <span id="total-cost">{{ $total_cost['total'] }}</span>
                     </div>
 
                         @foreach ($products as $key => $product)
