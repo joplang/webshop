@@ -27,7 +27,7 @@ class CartController extends Controller
         return view('cart.home', [
             'products'      => $products,
             'cart'          => Session::get('cart'),
-            'total_cost'    => $this->totalCost(),
+            // 'total_cost'    => $this->totalCost(),
 
         ]);
     }
@@ -43,7 +43,7 @@ class CartController extends Controller
             return response()->json([
                 'success'                   => true,
                 'num_products'              => count($session),
-                'total_cost'                => $this->totalCost(),
+                // 'total_cost'                => $this->totalCost(),
             ]);
         }
         catch(Exception $e) {
@@ -54,25 +54,25 @@ class CartController extends Controller
         }
     }
 
-    public function totalCost()
-    {
-        $cart = Session::get('cart');
+    // public function totalCost()
+    // {
+    //     $cart = Session::get('cart');
 
-        $total = 0;
-        $vat = 0;
+    //     $total = 0;
+    //     $vat = 0;
 
-        foreach ($cart as $productId => $quantity) {
-            $product = Product::findOrFail($productId);
+    //     foreach ($cart as $productId => $quantity) {
+    //         $product = Product::findOrFail($productId);
 
-            $total += ($product->price * $quantity);
-            $vat += $product->vat;
-        }
-        return [
-            'total' => number_format($total, 2, ',', '.'), 
-            'vat' => $vat
-        ];
+    //         $total += ($product->price * $quantity);
+    //         $vat += $product->vat;
+    //     }
+    //     return [
+    //         'total' => number_format($total, 2, ',', '.'), 
+    //         'vat' => $vat
+    //     ];
 
-    }
+    // }
     /**
      * Show the form for creating a new resource.
      *
