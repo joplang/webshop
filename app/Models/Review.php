@@ -13,14 +13,4 @@ class Review extends Model
     use HasFactory, HasUserStamps;
 
     protected $table = 'reviews';
-
-
-    public function Reviewer($user_id)
-    {
-
-
-        $user = User::get()->where('id', $user_id);
-
-        return $user;
-    }
 }
