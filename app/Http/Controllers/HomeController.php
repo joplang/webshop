@@ -27,20 +27,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products   = Product::all();
-        $artists    = Artist::all();
-        $labels     = Label::all();
-        $genres     = Genre::all();
-
-        $highlights  = $products->slice(1, 5);
-
-
         return view('welcome', [
-            'products'  => $products,
-            'artists'   => $artists,
-            'labels'    => $labels,
-            'genres'    => $genres,
-            'highlights' => $highlights,
+            'products'  =>  Product::all(),
+            'artists'   =>  Artist::all(),
+            'labels'    =>  Label::all(),
+            'genres'    =>  Genre::all(),
+            'highlights' => Product::all()->slice(1, 5),
         ]);
     }
 
