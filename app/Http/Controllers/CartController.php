@@ -46,8 +46,7 @@ class CartController extends Controller
                 'num_products'              => count($session),
                 'total_cost'                => $this->totalCost(),
             ]);
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             return response()->json([
                 'success'   => false,
                 'message'   => $e->getMessage(),
@@ -69,10 +68,9 @@ class CartController extends Controller
             $vat += $product->vat;
         }
         return [
-            'total' => number_format($total, 2, ',', '.'), 
+            'total' => number_format($total, 2, ',', '.'),
             'vat' => $vat
         ];
-
     }
     /**
      * Show the form for creating a new resource.
@@ -86,12 +84,12 @@ class CartController extends Controller
     /**
      * Remove item from cart
      */
-    public function removeFromCart (Request $request)
+    public function removeFromCart(Request $request)
     {
         try {
             $session = Session::get('cart');
 
-            if(array_key_exists($request->product_id, $session)) {
+            if (array_key_exists($request->product_id, $session)) {
                 unset($session[$request->product_id]);
             }
 
@@ -102,8 +100,7 @@ class CartController extends Controller
                 'num_products'  => count($session),
                 'total_cost'        => $this->totalCost(),
             ]);
-        }
-        catch(Exception $e) {
+        } catch (Exception $e) {
             return response()->json([
                 'success'   => false,
                 'message'   => $e->getMessage(),
