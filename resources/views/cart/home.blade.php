@@ -6,10 +6,18 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-        
-                    <div class="card-header">Winkelmand is 
-                        &euro; <span id="total-cost">{{ $total_cost['total'] }}</span>
-                    </div>
+
+                        @if ('num_products' === 0)
+                                <div class="card-header">Winkelmand is leeg
+                                </div>
+                        @else
+                        <div class="card-header">Winkelmand is 
+                            &euro; <span id="total-cost">{{ $total_cost['total'] }}</span>
+                        </div>                                
+                        @endif
+
+                                <button class="empty">Winkelmand legen</button>
+                                <br>
 
                         @foreach ($products as $key => $product)
                             <div class="product-detail">
@@ -84,7 +92,28 @@
             })
         })
 
-        //show total cost price
+        //empty cart
+        $(document).on('click', '.empty', function(event) {
+            let product_id = $(this).attr('p_id')
+            let quantity = $('#p_' + product_id).val()
+
+            axios({
+                method: 'POST',
+                url: '{{ route("empty-cart") }}',
+                
+                data: {
+                    product_id: product_id,
+                    quantity: quantity,
+                }
+            }).then(function(response) {
+                if (response.data.success) {
+                    $('#p_' + product_id).val('')
+                    $('#cartcounter').html(response.data.num_products)
+                    $('#total-cost').html(response.data.total_cost.total)
+                }
+            }).catch(function(error) {
+            })
+        })
         
         
     </script>

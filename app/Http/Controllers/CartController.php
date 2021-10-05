@@ -161,8 +161,27 @@ class CartController extends Controller
      * @param  \App\Models\cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cart $cart)
+    public function emptyCart(Cart $cart, Request $request)
     {
-        //winkelmandje leeg functie
+        try {
+            $session = Session::get('cart');
+
+            if (array_key_exists($request->product_id, $session)) {
+                unset($session[$request->product_id]);
+            }
+
+            Session::flush('cart', $session);
+
+            return response()->json([
+                'success'           => true,
+                'num_products'      => count($session),
+                'total_cost'        => $this->totalCost(),
+            ]);
+        } catch (Exception $e) {
+            return response()->json([
+                'success'   => false,
+                'message'   => $e->getMessage(),
+            ]);
+        }
     }
 }
