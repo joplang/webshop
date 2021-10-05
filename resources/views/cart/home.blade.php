@@ -110,6 +110,7 @@
                     $('#p_' + product_id).val('')
                     $('#cartcounter').html(response.data.num_products)
                     $('#total-cost').html(response.data.total_cost.total)
+                    window.location.reload()
                 }
             }).catch(function(error) {
             })
