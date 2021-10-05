@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Artist;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
 {
@@ -34,16 +36,7 @@ class ProductController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    
 
     /**
      * Display the specified resource.
@@ -53,8 +46,14 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        $cart = [];
+        if (Session::exists('cart')) {
+            $cart = !is_null(Session::get('cart')) ? Session::get('cart') : [];
+        }
+
         return view('products/show', [
             'product' => $product,
+            'quantity'  => array_key_exists($product->id, $cart) ? $cart[$product->id] : null,
         ]);
     }
 

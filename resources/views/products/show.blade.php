@@ -28,7 +28,8 @@
                         <div class="row">
                             <div class="col-6">€{{ $product->price }}</div>
                             <div class="col-6">
-                                <button class="btn btn-dark" type="button">Bestel!</button>
+                                <input type="number" id="quantity" value="{{ $quantity }}">
+                                <button class="btn btn-dark" id="add-one" type="button" p_id="{{ $product->id }}">Bestel!</button>
                                 <a class="btn btn-dark" href="/cart" role="button">Naar Checkout!</a>
                             </div>
                         </div>
@@ -49,3 +50,32 @@
 </div>
 
 @endsection
+
+@push('scripts')
+
+    <script>
+        //add one product quantity to cart
+        $(document).on('click', '#add-one', function(event) {
+            let product_id = $(this).attr('p_id')
+            let quantity = $('#quantity').val()
+            axios({
+                method: 'POST',
+                url: '{{ route("add-one-tocart") }}',
+                
+                data: {
+                    product_id: product_id,
+                    quantity: quantity,
+                }
+            }).then(function(response) {
+                if (response.data.success) {
+                    $('#cartcounter').html(response.data.num_products)
+                    $('#total-cost').html(response.data.total_cost.total)
+                }
+            }).catch(function(error) {
+            })
+        })
+        
+        
+    </script>
+
+@endpush
