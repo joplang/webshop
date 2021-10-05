@@ -108,17 +108,31 @@ class CartController extends Controller
             ]);
         }
     }
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function addOneToCart(Request $request)
     {
-        //
-    }
+        $cart = [];
+        if (Session::exists('cart')) {
+            $cart = !is_null(Session::get('cart')) ? Session::get('cart') : [];
+        }
 
+        $cart[$request->product_id] = (int)$request->quantity;
+          
+        Session::put('cart', $cart);
+
+        return response()->json([
+            'success'       => true,
+            'message'       => 'Product added to cart successfully!',
+            'num_products'  => count($cart),
+        ]);
+    }
+    
     /**
      * Display the specified resource.
      *
