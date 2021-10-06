@@ -18,14 +18,16 @@
 
                                 <button class="empty">Winkelmand legen</button>
                                 <br>
-
+                        @if (empty($cart))
+                            <div>Mand!</div>
+                            @else
                         @foreach ($products as $key => $product)
                             <div class="product-detail">
                                 <div class="shopcart">
                                     {{ $product->album_title }}
                                     {{ $product->description }}
                                     <br>
-                                    €{{ $product->price }}
+                                    &euro; {{ $product->price }}
                                 </div>
 
                                 <input id="p_{{ $product->id }}" type="text" value="{{ isset($cart[$product->id]) ? $cart[$product->id] : '' }}">
@@ -35,7 +37,7 @@
 
                             <div>
                         @endforeach
-
+                        @endif
                     <div class="cart">
                         <ul class="cart-items"></ul>
                     </div>
