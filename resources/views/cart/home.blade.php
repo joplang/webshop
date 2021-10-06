@@ -7,17 +7,13 @@
             <div class="col-md-8">
                 <div class="card">
 
-                        @if ('num_products' === 0)
-                                <div class="card-header">Winkelmand is leeg
-                                </div>
-                        @else
+                        
                         <div class="card-header">Winkelmand is 
                             &euro; <span id="total-cost">{{ $total_cost['total'] }}</span>
-                        </div>                                
-                        @endif
-
-                                <button class="empty">Winkelmand legen</button>
-                                <br>
+                        </div>
+                        <button class="empty">Winkelmand legen</button>
+                                <br>                             
+      
                         @if (empty($cart))
                             <div>Mand!</div>
                             @else
@@ -29,7 +25,7 @@
                                     <br>
                                     &euro; {{ $product->price }}
                                 </div>
-
+                                
                                 <input id="p_{{ $product->id }}" type="text" value="{{ isset($cart[$product->id]) ? $cart[$product->id] : '' }}">
 
                                 <button class="add" p_id="{{ $product->id }}">Voeg toe</button>
