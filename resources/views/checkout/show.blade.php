@@ -27,12 +27,21 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="card-footer">Uw totaalprijs: <br> &euro;{{ $total_cost["total"] }}</div>
+                        <div class="card-footer">Uw totaalprijs: <br> &euro;{{ $total_cost["total"] }} <br> 
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Betaalopties:</option>
+                                <option value="1">Visa</option>
+                                <option value="2">MasterCard</option>
+                                <option value="3">Muntjes door ons raam gooien</option>
+                                <option value="4">Kinderpostzegels</option>
+                                <option value="5">Ik koop binnenkort wel een biertje voor jullie</option>
+                              </select>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Plaats uw bestelling!</button>
+                        <button type="submit" class="btn btn-primary btn-dark">Plaats uw bestelling!</button>
                       </div>                  
                 </div>
             </div>

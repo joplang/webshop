@@ -8,11 +8,7 @@ use App\Models\Product;
 
 class GenreController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
@@ -29,8 +25,6 @@ class GenreController extends Controller
      */
     public function show(Genre $genre)
     {
-
-
         return view('genres/show', [
             'genre'     => $genre,
         ]);
