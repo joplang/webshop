@@ -22,7 +22,7 @@
                 @foreach ($genre->products as $product)
                 <div class="card border-dark m-4 p-2">
                         <div class="card-title text-center"> 
-                            <a href="/artists/{{$product->id}}"><b>{{ $product->album_title }}</b></a>    €{{ $product->price }}
+                            <a href="/products/{{$product->id}}"><b>{{ $product->album_title }}</b></a>    €{{ $product->price }}
                         </div>
                 </div>
                 @endforeach

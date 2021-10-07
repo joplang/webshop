@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artist;
 use App\Models\Product;
-use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class ProductController extends Controller
@@ -36,7 +33,7 @@ class ProductController extends Controller
         //
     }
 
-    
+
 
     /**
      * Display the specified resource.
