@@ -39,6 +39,76 @@ class ProductsSeeder extends Seeder
                 'VAT'           => 5.50,
             ]
         );
+        DB::table('products')->insert(
+            [
+                'artist_id'     => 2,
+                'label_id'      => 1,
+                'genre_id'      => 1,
+                'album_title'   => 'De Doorn',
+                'year'          =>  2021,
+                'description'   => "AMENRA’s first release for Relapse Records is at once a departure and a momentous act of deliverance.",
+                'track_list'    => "	
+                1.
+                Ogentroost 10:01
+                2.
+                De Dood In Bloei 04:38
+                3.
+                De Evenmens 08:01
+                4.
+                Het Gloren 11:30
+                5.
+                Voor Immer 12:42
+        ",
+                'price'         => 20.98,
+                'VAT'           => 5.50,
+            ]
+        );
+        DB::table('products')->insert(
+            [
+                'artist_id'     => 3,
+                'label_id'      => 1,
+                'genre_id'      => 1,
+                'album_title'   => 'Dede Kondre',
+                'year'          =>  2017,
+                'description'   => "Turia was started in the winter of 2014. The band aims to evoke gripping black metal, stripped to its bare necessities. ",
+                'track_list'    => "	
+                1.
+                Dede Kondre 06:45
+                2.
+                Een Poort van Takken en Loof 08:00
+                buy track
+                3.
+                De Houten Tempel 08:04
+                4.
+                Waterzucht 07:35
+                5.
+                De Toorn der Goden 11:11
+        ",
+                'price'         => 20.98,
+                'VAT'           => 5.50,
+            ]
+        );
+        DB::table('products')->insert(
+            [
+                'artist_id'     => 4,
+                'label_id'      => 1,
+                'genre_id'      => 1,
+                'album_title'   => 'Gegrepen Door de Geest der Zielsontluiking',
+                'year'          =>  2021,
+                'description'   => "Fluisteraars do it again with their idiosyncratic, emotive, conjuring heavy music. They truly bring you into their mysterious world with their atmospheres and melodies. ",
+                'track_list'    => "		
+                1.
+                Het overvleugelen der meute 08:14
+                2.
+                Brand woedt in mijn graf 07:06
+                3.
+                Verscheuring in de schemering 20:15
+                about                
+        ",
+                'price'         => 20.98,
+                'VAT'           => 5.50,
+            ]
+        );
         Product::factory(42)->create();
     }
 }
