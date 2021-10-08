@@ -27,6 +27,8 @@ Route::post('/remove-fromcart', [\App\Http\Controllers\CartController::class, 'r
 Route::post('/empty-cart', [App\Http\Controllers\CartController::class, 'emptyCart'])->name('empty-cart');
 Route::post('/add-one-tocart', [\App\Http\Controllers\CartController::class, 'addOneToCart'])->name('add-one-tocart');
 
+Route::get('/checkout', [\App\Http\Controllers\CheckoutController::class, 'show'])->middleware('auth');
+Route::get('/completed', [\App\Http\Controllers\CheckoutController::class, 'order']);
 
 Route::resource('products', \App\Http\Controllers\ProductController::class);
 
