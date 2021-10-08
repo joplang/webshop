@@ -41,7 +41,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-dark">Plaats uw bestelling!</button>
+                        <a href="/completed"><button type="submit" class="btn btn-primary btn-dark">Plaats uw bestelling!</button></a>
                       </div>                  
                 </div>
             </div>

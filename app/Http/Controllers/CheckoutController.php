@@ -25,4 +25,9 @@ class CheckoutController extends Controller
             'total_cost'    => $this->CartController->totalCost()
         ]);
     }
+
+    public function order()
+    {
+        return view('checkout.out');
+    }
 }

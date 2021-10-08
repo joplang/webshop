@@ -1,0 +1,1 @@
+<span><h1>Uw bestelling is helaas verzonden naar het verkeerde adres. Uw betaling wordt teruggestort in 6 tot 8 maanden</h1></span>
